@@ -27,3 +27,12 @@ ps1_PROD="[\u@\h:\[${txtbld}${txtblu}\]PROD\[${txtrst}\]:\w] $ "
 
 export PS1=$ps1_DEV
 
+######################################
+##### Git
+######################################
+# Git branch in prompt
+parse_git_branch() {
+   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+# Git aware prompt 
+export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
