@@ -2,6 +2,8 @@
 ##### Aliases
 ######################################
 alias ll='ls -lar'
+alias psc='psc -ef | grep java | ~/dev/scripts/colour.sh'
+alias pscme='psc -ef | grep java | grep `whoami` | ~/dev/scripts/colour.sh'
 
 ######################################
 ##### Shell Colours
